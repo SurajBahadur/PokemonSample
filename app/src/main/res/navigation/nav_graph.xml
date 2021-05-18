@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.pokemontest.ui.tab.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_listing_to_detail"
+            app:destination="@id/pokemonDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="url"
+            android:defaultValue="null"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            android:defaultValue="null"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonFragment"
+        android:name="com.example.pokemontest.ui.pokemon.PokemonFragment"
+        android:label="fragment_pokemon"
+        tools:layout="@layout/fragment_pokemon">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/msrDevFragment"
+        android:name="com.example.pokemontest.ui.msr.MsrDevFragment"
+        android:label="fragment_msr_dev"
+        tools:layout="@layout/fragment_msr_dev" />
+    <fragment
+        android:id="@+id/pokemonDetailFragment"
+        android:name="com.example.pokemontest.ui.detail.PokemonDetailFragment"
+        android:label="fragment_pokemon_detail"
+        tools:layout="@layout/fragment_pokemon_detail" />
+
+</navigation>
